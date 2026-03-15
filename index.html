@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thermodynamics Learning Cards</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.6; 
+            margin: 0; 
+            padding: 40px 20px; 
+            background-color: #f4f7f6; 
+            color: #333; 
+        }
+        
+        header { 
+            text-align: center; 
+            margin-bottom: 50px; 
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        h1 { 
+            color: #2c3e50; 
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .description { 
+            font-size: 1.1rem; 
+            color: #555; 
+            max-width: 700px;
+            margin: 0 auto 15px auto;
+        }
+
+        /* 教学理念提示框 */
+        .pedagogy {
+            font-size: 1.05rem;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto 15px auto;
+            background-color: #eaf2f8; 
+            padding: 20px 25px;
+            border-radius: 8px;
+            border-left: 5px solid #002147; 
+            text-align: left;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        /* 新增：联系与使用提示框 */
+        .contact-info {
+            font-size: 1.05rem;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto 25px auto;
+            background-color: #fff3e0; /* 极淡的橙色背景，引起注意 */
+            padding: 15px 25px;
+            border-radius: 8px;
+            border-left: 5px solid #ff9800; /* 橙色左边框 */
+            text-align: left;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .contact-info a {
+            color: #d35400;
+            font-weight: bold;
+            text-decoration: none;
+            border-bottom: 1px dotted #d35400;
+            transition: color 0.2s;
+        }
+
+        .contact-info a:hover {
+            color: #e67e22;
+        }
+        
+        .credits { 
+            font-style: italic; 
+            color: #7f8c8d; 
+            margin-top: 20px; 
+            font-size: 1.05rem;
+        }
+
+        .credits a {
+            color: #002147; 
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 1px dotted #002147;
+            transition: color 0.2s;
+        }
+
+        .credits a:hover {
+            color: #0055a4;
+        }
+        
+        .container { 
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .category-section {
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .category-header {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 4px solid #eee;
+        }
+        
+        .category-header h2 { margin: 0 0 5px 0; font-size: 1.8rem; }
+        .category-header p { margin: 0; color: #666; font-size: 1.1rem; font-weight: bold; }
+
+        .basic-header { border-bottom-color: #ff9800; }
+        .basic-header h2 { color: #e65100; }
+
+        .flow-header { border-bottom-color: #2196f3; }
+        .flow-header h2 { color: #0d47a1; }
+
+        .cell-header { border-bottom-color: #4caf50; }
+        .cell-header h2 { color: #1b5e20; }
+
+        .func-header { border-bottom-color: #9c27b0; }
+        .func-header h2 { color: #4a148c; }
+
+        .nucl-header { border-bottom-color: #795548; }
+        .nucl-header h2 { color: #3e2723; }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .real-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+            display: block; 
+        }
+        
+        .real-image:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+        }
+
+        footer {
+            text-align: center; 
+            margin-top: 60px; 
+            padding-top: 30px; 
+            border-top: 1px solid #e0e0e0; 
+            color: #555; 
+            font-size: 0.95rem; 
+            line-height: 1.8;
+        }
+
+        footer a {
+            color: #002147; 
+            text-decoration: none; 
+            border-bottom: 1px dotted #002147;
+        }
+        
+        footer a:hover { color: #0055a4; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Thermodynamics Learning Cards</h1>
+        <p class="description">A visual educational tool designed for undergraduate thermodynamics teaching, categorized by distinct functional color codes.</p>
+        
+        <div class="pedagogy">
+            <strong>💡 Design Philosophy:</strong> Every card is thoughtfully structured with a real-life visual illustration, a clear conceptual explanation, and a specific industrial application. This design aims to bridge the gap between abstract thermodynamic theories and real-world engineering scenarios. By consistently connecting concepts to practical use cases, these cards help students cultivate an industry-ready mindset, giving them a meaningful perspective for their future careers and job searches.
+        </div>
+
+        <div class="contact-info">
+            <strong>📧 How to Use:</strong> If you would like to use these cards in your teaching, or request high-resolution print files, please send an email to: 
+            <a href="mailto:yige.sun@materials.ox.ac.uk">yige.sun@materials.ox.ac.uk</a>
+        </div>
+
+        <p class="credits">Cards designed by Yige Sun (<a href="https://materialsoutreach.web.ox.ac.uk/people/dr-yige-sun" target="_blank">University of Oxford</a>), and blended by ChatGPT.</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="category-section">
+            <div class="category-header basic-header">
+                <h2>BASIC (Orange)</h2>
+                <p>Basic Concepts and Quantities</p>
+            </div>
+            <div id="grid-basic" class="card-grid"></div>
+        </div>
+
+        <div class="category-section">
+            <div class="category-header flow-header">
+                <h2>FLOW (Blue)</h2>
+                <p>Thermodynamic Processes and Energy Flow</p>
+            </div>
+            <div id="grid-flow" class="card-grid"></div>
+        </div>
+
+        <div class="category-section">
+            <div class="category-header cell-header">
+                <h2>CELL (Green)</h2>
+                <p>Electrochemical and Material Properties</p>
+            </div>
+            <div id="grid-cell" class="card-grid"></div>
+        </div>
+
+        <div class="category-section">
+            <div class="category-header func-header">
+                <h2>FUNC (Purple)</h2>
+                <p>Functional Ratios and Process Analysis</p>
+            </div>
+            <div id="grid-func" class="card-grid"></div>
+        </div>
+
+        <div class="category-section">
+            <div class="category-header nucl-header">
+                <h2>NUCL (Brown)</h2>
+                <p>Nuclear and Radiative</p>
+            </div>
+            <div id="grid-nucl" class="card-grid"></div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p><strong>&copy; 2026 Yige Sun.</strong></p>
+        <p>These Thermodynamics Learning Cards are licensed under a <br>
+        <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</p>
+        <p style="font-size: 0.85rem; margin-top: 10px; color: #7f8c8d;"><em>You are free to share and use this material for educational purposes, provided you give appropriate credit to the author.</em></p>
+    </footer>
+
+    <script>
+        const basicCards = [
+            "00. Joule's experiments.png",
+            "01. Basic Concepts and Quantities_Surroundings.png",
+            "01. Basic Concepts and Quantities_System.png",
+            "02. Basic Concepts and Quantities_State.png",
+            "03. Basic Concepts and Quantities_Temperature.png",
+            "04. Basic Concepts and Quantities_Mass.png",
+            "05. Basic Concepts and Quantities_Heat.png",
+            "06. Basic Concepts and Quantities_Volume.png",
+            "07. Basic Concepts and Quantities_Pressure.png",
+            "08. Basic Concepts and Quantities_Density.png",
+            "09. Basic Concepts and Quantities_Mole.png"
+        ];
+
+        const flowCards = [
+            "00. Joule's Experiment conditions.png",
+            "00. Joule's Experiment conditions_2.png",
+            "00. Joule's experiments_Number of Trials.png",
+            "10. Thermodynamic Processes and Energy Flow_Internal Energy.png",
+            "11. Thermodynamic Processes and Energy Flow_First Law of Thermodynamics.png",
+            "12. Thermodynamic Processes and Energy Flow_Enthalpy.png",
+            "13. Thermodynamic Processes and Energy Flow_Heat Transfer Coefficient.png",
+            "14. Thermodynamic Processes and Energy Flow_Gibbs Free Energy.png",
+            "15. Thermodynamic Processes and Energy Flow_Work.png",
+            "16. Thermodynamic Processes and Energy Flow_Entropy.png"
+        ];
+
+        const cellCards = [
+            "17. Electrochemical and Material Properties_Universal Gas Constant.png",
+            "18. Electrochemical and Material Properties_Faraday Constant.png",
+            "19. Electrochemical and Material Properties_Avogadro Number.png",
+            "20. Electrochemical and Material Properties_Efficiency.png",
+            "21. Electrochemical and Material Properties_Boltzmann Constant.png",
+            "22. Electrochemical and Material Properties_Chemical Potential.png",
+            "23. Electrochemical and Material Properties_Heat Capacity at Constant Pressure.png",
+            "24. Electrochemical and Material Properties_Elementary Charge.png",
+            "25. Electrochemical and Material Properties_Thermal Conductivity.png",
+            "26. Electrochemical and Material Properties_Diffusion Coefficient.png"
+        ];
+
+        const funcCards = [
+            "27.Functional Ratios and Process Analysis_Heat Capacity Ratio.png",
+            "28.Functional Ratios and Process Analysis_Thermal Exergy.png",
+            "29.Functional Ratios and Process Analysis_Irreversibility.png"
+        ];
+
+        const nuclCards = [
+            "30. Nuclear and Radiative Quantities_Speed of Light.png",
+            "31. Nuclear and Radiative Quantities_Activity.png",
+            "32 Nuclear and Radiative Quantities_Decay Constant.png",
+            "33 Nuclear and Radiative Quantities_Cross Section.png",
+            "34 Nuclear and Radiative Quantities_Plank Constant.png"
+        ];
+
+        function loadImages(gridId, imageArray) {
+            const grid = document.getElementById(gridId);
+            imageArray.forEach(fileName => {
+                const img = document.createElement('img');
+                img.src = "images/" + fileName; 
+                img.alt = fileName;
+                img.className = "real-image";
+                img.loading = "lazy";
+                grid.appendChild(img);
+            });
+        }
+
+        loadImages('grid-basic', basicCards);
+        loadImages('grid-flow', flowCards);
+        loadImages('grid-cell', cellCards);
+        loadImages('grid-func', funcCards);
+        loadImages('grid-nucl', nuclCards);
+    </script>
+</body>
+</html>
